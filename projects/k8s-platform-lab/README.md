@@ -67,8 +67,8 @@ make verify
 
 ---
 
-## Interview Fast Path
-Recruiter by mal za 2 min vidieť:
+## Quick Technical Walkthrough
+Za 2 min má byť zrejmé:
 1. `docs/architecture.md`
 2. `Makefile` workflow
 3. `docs/runbook.md`

@@ -6,9 +6,9 @@ Krátky prehľad produkčne orientovaných projektov (infra + software), ktoré 
 - observability, reliability a security best practices
 - schopnosť dodávať end-to-end riešenia
 
-## ⚡ Quick Interview Index (2–3 min)
+## ⚡ Project Index (Quick Overview)
 
-| Project | Domain | Stack | What to look at first |
+| Project | Domain | Stack | First checkpoints |
 |---|---|---|---|
 | [k8s-platform-lab](./projects/k8s-platform-lab/README.md) | Platform Engineering | Kubernetes, ArgoCD, Helm, Prometheus | `Architecture`, `Runbook`, `Results` |
 | [terraform-cloud-foundation](./projects/terraform-cloud-foundation/README.md) | IaC / Cloud | Terraform, OPA/Conftest, GitHub Actions | `Modules`, `Policy checks`, `CI pipeline` |
@@ -21,7 +21,7 @@ Krátky prehľad produkčne orientovaných projektov (infra + software), ktoré 
 ├─ docs/
 │  ├─ architecture-principles.md
 │  ├─ decision-log.md
-│  └─ interview-walkthrough.md
+│  └─ project-walkthrough.md
 ├─ projects/
 │  ├─ k8s-platform-lab/
 │  ├─ terraform-cloud-foundation/
@@ -41,14 +41,14 @@ Každý projekt musí mať v README tieto sekcie:
 7. **Results / Metrics**
 8. **What I'd improve next**
 
-## What Recruiters Usually Appreciate
+## Engineering Quality Bar
 
-- jasný scope a business context
-- reálne trade-offy (nie len „happy path“)
+- jasný scope a kontext
+- transparentné trade-offy
 - monitoring + alerting + runbooks
 - testy a quality gates v CI
-- stručnosť a čitateľnosť dokumentácie
+- stručná a konzistentná dokumentácia
 
 ---
 
-Ak si recruiter vie za 2 min prejsť index + jeden README a pochopí, že vieš dodať systém v produkčnej kvalite, cieľ je splnený.
+Cieľ repozitára je udržať projekty technicky konzistentné, reprodukovateľné a dobre čitateľné.
