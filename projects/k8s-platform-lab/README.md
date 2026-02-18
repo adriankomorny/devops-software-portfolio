@@ -29,6 +29,8 @@ High-level:
 - GitHub Actions
 
 ## 4) How to Run (MVP)
+Prerequisites: `docker`, `kind`, `kubectl` (a voliteľne `helm`).
+
 ```bash
 # 1) vytvor cluster
 make cluster-up

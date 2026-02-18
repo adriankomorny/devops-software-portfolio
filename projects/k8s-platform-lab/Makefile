@@ -3,16 +3,16 @@ SHELL := /bin/bash
 .PHONY: cluster-up cluster-down platform-bootstrap app-deploy verify
 
 cluster-up:
-	@echo "[TODO] Create local Kubernetes cluster (kind)"
+	@./scripts/cluster-up.sh
 
 cluster-down:
-	@echo "[TODO] Delete local Kubernetes cluster"
+	@./scripts/cluster-down.sh
 
 platform-bootstrap:
-	@echo "[TODO] Install ArgoCD + monitoring stack"
+	@./scripts/platform-bootstrap.sh
 
 app-deploy:
-	@echo "[TODO] Deploy sample-api via GitOps"
+	@./scripts/app-deploy.sh
 
 verify:
-	@echo "[TODO] Verify pods, services, ingress, and metrics"
+	@./scripts/verify.sh
