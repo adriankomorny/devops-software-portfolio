@@ -1,10 +1,10 @@
 # Adrian Komorny — DevOps & Software Portfolio
 
-Krátky prehľad produkčne orientovaných projektov (infra + software), ktoré ukazujú:
-- návrh infraštruktúry ako kód
-- cloud-native prevádzku
-- observability, reliability a security best practices
-- schopnosť dodávať end-to-end riešenia
+A concise collection of production-oriented projects (infrastructure + software) that demonstrate:
+- infrastructure as code design
+- cloud-native operations
+- observability, reliability, and security best practices
+- end-to-end delivery skills
 
 ## ⚡ Project Index (Quick Overview)
 
@@ -31,9 +31,9 @@ Krátky prehľad produkčne orientovaných projektov (infra + software), ktoré 
 
 ## Standards for Every Project
 
-Každý projekt musí mať v README tieto sekcie:
-1. **Problem / Goal** (čo rieši a prečo)
-2. **Architecture** (diagram + komponenty)
+Each project README should include these sections:
+1. **Problem / Goal** (what it solves and why)
+2. **Architecture** (diagram + components)
 3. **Tech Stack**
 4. **How to Run**
 5. **CI/CD**
@@ -43,12 +43,12 @@ Každý projekt musí mať v README tieto sekcie:
 
 ## Engineering Quality Bar
 
-- jasný scope a kontext
-- transparentné trade-offy
+- clear scope and context
+- transparent trade-offs
 - monitoring + alerting + runbooks
-- testy a quality gates v CI
-- stručná a konzistentná dokumentácia
+- tests and quality gates in CI
+- concise and consistent documentation
 
 ---
 
-Cieľ repozitára je udržať projekty technicky konzistentné, reprodukovateľné a dobre čitateľné.
+The repository goal is to keep projects technically consistent, reproducible, and easy to understand.

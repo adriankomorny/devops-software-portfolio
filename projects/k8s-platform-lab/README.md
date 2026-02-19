@@ -1,25 +1,25 @@
 # k8s-platform-lab
 
-Production-style Kubernetes platform lab, ktorý ukazuje Platform/DevOps skills v praxi.
+Production-style Kubernetes platform lab demonstrating practical Platform/DevOps engineering skills.
 
 ## 1) Problem / Goal
-Mnohé tímy vedia appku nasadiť, ale chýba im konzistentná platforma: štandardné nasadzovanie, monitoring, security baseline, runbooky a spoľahlivosť.
+Many teams can deploy an application, but lack a consistent platform: standardized deployments, monitoring, security baselines, runbooks, and reliability practices.
 
-**Cieľ projektu:**
-- postaviť mini platformu na Kubernetes,
-- nasadzovať appku cez GitOps,
-- mať observability (metrics/logs/traces),
-- ukázať reliability a security best practices.
+**Project goals:**
+- build a mini platform on Kubernetes,
+- deploy the application through GitOps,
+- implement observability (metrics/logs/traces),
+- demonstrate reliability and security best practices.
 
 ## 2) Architecture
 Diagram: `docs/architecture.md`
 
 High-level:
-- Kubernetes cluster (lokálne cez kind/k3d na začiatok)
+- Kubernetes cluster (local kind/k3d in the first phase)
 - ArgoCD (GitOps deploy)
 - Sample API app
 - Prometheus + Grafana (+ Alertmanager)
-- Ingress + TLS (neskôr cert-manager)
+- Ingress + TLS (later with cert-manager)
 
 ## 3) Tech Stack
 - Kubernetes (kind)
@@ -29,49 +29,49 @@ High-level:
 - GitHub Actions
 
 ## 4) How to Run (MVP)
-Prerequisites: `docker`, `kind`, `kubectl` (a voliteľne `helm`).
+Prerequisites: `docker`, `kind`, `kubectl` (and optionally `helm`).
 
 ```bash
-# 1) vytvor cluster
+# 1) create cluster
 make cluster-up
 
-# 2) nainštaluj základ platformy
+# 2) bootstrap platform components
 make platform-bootstrap
 
-# 3) nasaď sample API
+# 3) deploy sample API
 make app-deploy
 
-# 4) over health
+# 4) verify health
 make verify
 ```
 
 ## 5) CI/CD
-- lint YAML + policy checks
-- validate manifests
-- smoke test deploy flow
+- YAML lint + policy checks
+- manifest validation
+- deploy flow smoke test
 
 ## 6) Security & Reliability
 - namespace isolation
 - resource requests/limits
 - readiness/liveness probes
-- základné network policies (v ďalšej fáze)
+- baseline network policies (next phase)
 
-## 7) Results / Metrics (doplníme po implementácii)
+## 7) Results / Metrics
 - deployment lead time
-- MTTR pri simulovanom incidente
+- MTTR for a simulated incident
 - basic availability/SLO
 
 ## 8) What I'd improve next
 - [ ] cert-manager + TLS everywhere
 - [ ] external secrets flow
-- [ ] HPA + load test scenár
-- [ ] chaos testing scenár
+- [ ] HPA + load testing scenario
+- [ ] chaos testing scenario
 
 ---
 
 ## Quick Technical Walkthrough
-Za 2 min má byť zrejmé:
+A 2-minute walkthrough should make these clear:
 1. `docs/architecture.md`
 2. `Makefile` workflow
 3. `docs/runbook.md`
-4. výsledky v `docs/results.md`
+4. results in `docs/results.md`

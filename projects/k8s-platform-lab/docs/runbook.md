@@ -5,7 +5,7 @@
 2. `kubectl logs deploy/sample-api -n app --tail=100`
 3. `kubectl describe pod <pod> -n app`
 4. check Grafana dashboard (error rate, latency)
-5. rollback deployment, ak posledný release spôsobil regresiu
+5. roll back deployment if the latest release introduced a regression
 
 ## Recovery target
-- do 15 min obnoviť základnú dostupnosť služby
+- restore baseline service availability within 15 minutes
