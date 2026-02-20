@@ -99,12 +99,9 @@ def _decode_token(token: str, expected_type: str):
 def _catalog_to_dict(item: SkinCatalog) -> dict:
     return {
         "id": item.id,
-        "game": item.game,
         "weapon": item.weapon,
         "skin_name": item.skin_name,
         "rarity": item.rarity,
-        "collection": item.collection,
-        "image_url": item.image_url,
     }
 
 

@@ -70,6 +70,8 @@ flask --app manage.py db upgrade
 - seed source file: `counter-orion/data/cs2_skins_seed.json`
 - seed script: `counter-orion/scripts/seed_catalog.py`
 - indexing/uniqueness migration: `21902f4f0fa1`
+- current simplified catalog fields: `weapon`, `skin_name`, `rarity`
+- currently allowed rarities: `Covert`, `Extraordinary`
 
 Run seed in deployed stack:
 ```bash
