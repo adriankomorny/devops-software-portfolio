@@ -1,5 +1,5 @@
 services:
-  sample-api:
+  sample-browser-app:
     image: ${IMAGE_REPO}:${IMAGE_TAG}
     container_name: ${APP_NAME}
     restart: unless-stopped

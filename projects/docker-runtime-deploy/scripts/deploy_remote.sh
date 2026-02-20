@@ -11,7 +11,7 @@ fi
 
 VM2_HOST="${VM2_HOST:?VM2_HOST is required}"
 VM2_USER="${VM2_USER:?VM2_USER is required}"
-APP_NAME="${APP_NAME:-sample-api}"
+APP_NAME="${APP_NAME:-sample-browser-app}"
 APP_PORT="${APP_PORT:-8080}"
 IMAGE_REPO="${IMAGE_REPO:?IMAGE_REPO is required}"
 IMAGE_TAG="${1:-${IMAGE_TAG:-}}"

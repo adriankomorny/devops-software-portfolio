@@ -29,5 +29,5 @@ cp .env.example .env
 
 ## Logs on VM2
 ```bash
-ssh vm2@192.168.56.101 'docker compose -f /home/vm2/docker-compose.yml logs -f'
+ssh vm2@<VM2_ip> 'docker compose -f /home/vm2/docker-compose.yml logs -f'
 ```
