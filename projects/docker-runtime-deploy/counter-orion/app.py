@@ -3,7 +3,7 @@ from functools import wraps
 import os
 
 import jwt
-from flask import Flask, Response, g, jsonify, request
+from flask import Flask, Response, g, jsonify, request, send_file
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import func
@@ -155,7 +155,7 @@ def root():
   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />
   <title>__APP_NAME__</title>
   <style>
-    body { font-family: Arial, sans-serif; background:#0f172a url('https://cdn.cloudflare.steamstatic.com/steam/apps/730/library_hero.jpg') center/cover fixed no-repeat; color:#e2e8f0; margin:0; }
+    body { font-family: Arial, sans-serif; background:#0f172a url('/assets/bg-awp-dragon-lore.jpg') center/cover fixed no-repeat; color:#e2e8f0; margin:0; }
     .wrap { max-width: 760px; margin: 8vh auto; padding: 24px; background:#1e293b; border-radius:12px; border:1px solid #334155; }
     .row { margin-top: 12px; }
     button { margin-top: 14px; margin-right: 8px; padding: 8px 14px; border:0; border-radius:8px; background:#38bdf8; color:#082f49; font-weight:700; cursor:pointer; }
@@ -281,7 +281,7 @@ def profile_page():
   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />
   <title>__APP_NAME__ / profile</title>
   <style>
-    body { font-family: Arial, sans-serif; background:#0f172a url('https://cdn.cloudflare.steamstatic.com/steam/apps/730/library_hero.jpg') center/cover fixed no-repeat; color:#e2e8f0; margin:0; }
+    body { font-family: Arial, sans-serif; background:#0f172a url('/assets/bg-awp-dragon-lore.jpg') center/cover fixed no-repeat; color:#e2e8f0; margin:0; }
     .wrap { max-width: 920px; margin: 6vh auto; padding: 24px; background:#1e293b; border-radius:12px; border:1px solid #334155; }
     button { margin-top: 14px; margin-right: 8px; padding: 8px 14px; border:0; border-radius:8px; background:#38bdf8; color:#082f49; font-weight:700; cursor:pointer; }
     pre { background:#0f172a; border:1px solid #334155; border-radius:8px; padding:10px; overflow:auto; }
@@ -374,7 +374,7 @@ def inventory_page():
   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />
   <title>__APP_NAME__ / inventory</title>
   <style>
-    body { font-family: Arial, sans-serif; background:#0f172a url('https://cdn.cloudflare.steamstatic.com/steam/apps/730/library_hero.jpg') center/cover fixed no-repeat; color:#e2e8f0; margin:0; }
+    body { font-family: Arial, sans-serif; background:#0f172a url('/assets/bg-awp-dragon-lore.jpg') center/cover fixed no-repeat; color:#e2e8f0; margin:0; }
     .wrap { max-width: 980px; margin: 4vh auto; padding: 24px; background:#1e293b; border-radius:12px; border:1px solid #334155; }
     .grid { display:grid; grid-template-columns: 1fr 1fr; gap: 16px; }
     input, select { margin: 4px 0; width: 100%; padding: 8px; border-radius: 8px; border: 1px solid #334155; background: #0f172a; color: #e2e8f0; }
@@ -593,6 +593,11 @@ def inventory_page():
 """
     html = html.replace("__APP_NAME__", APP_NAME)
     return Response(html, mimetype="text/html")
+
+
+@app.get("/assets/bg-awp-dragon-lore.jpg")
+def bg_awp_dragon_lore():
+    return send_file("data/bg-awp-dragon-lore.jpg", mimetype="image/jpeg")
 
 
 @app.get("/health")
