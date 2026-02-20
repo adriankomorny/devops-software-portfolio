@@ -64,6 +64,17 @@ flask --app manage.py db upgrade
 - `user_skins` (user-owned inventory entries)
 - migration revision: `07e6fa35699e`
 
+## Sprint 2 / Task 2 catalog seed
+- seed source file: `counter-orion/data/cs2_skins_seed.json`
+- seed script: `counter-orion/scripts/seed_catalog.py`
+- indexing/uniqueness migration: `21902f4f0fa1`
+
+Run seed in deployed stack:
+```bash
+cd /home/vm2
+APP_PORT=8082 docker compose --env-file .env -f docker-compose.yml run --rm counter-orion python scripts/seed_catalog.py
+```
+
 ## Notes
 - Use immutable tags (e.g. `v0.1.0`, git SHA), avoid `latest`.
 - Keep `.env` out of git if it contains sensitive values.

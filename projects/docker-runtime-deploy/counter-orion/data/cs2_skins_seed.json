@@ -1,0 +1,67 @@
+[
+  {"weapon":"AK-47","skin_name":"Redline","rarity":"Classified","collection":"The Phoenix Collection"},
+  {"weapon":"AK-47","skin_name":"Asiimov","rarity":"Covert","collection":"The Danger Zone Collection"},
+  {"weapon":"AK-47","skin_name":"Frontside Misty","rarity":"Classified","collection":"The Shadow Collection"},
+  {"weapon":"AK-47","skin_name":"Nightwish","rarity":"Covert","collection":"The Dreams & Nightmares Collection"},
+  {"weapon":"AK-47","skin_name":"Slate","rarity":"Restricted","collection":"The Snakebite Collection"},
+
+  {"weapon":"M4A1-S","skin_name":"Printstream","rarity":"Covert","collection":"The Operation Broken Fang Collection"},
+  {"weapon":"M4A1-S","skin_name":"Decimator","rarity":"Classified","collection":"The Spectrum Collection"},
+  {"weapon":"M4A1-S","skin_name":"Player Two","rarity":"Covert","collection":"The Prisma 2 Collection"},
+  {"weapon":"M4A1-S","skin_name":"Mecha Industries","rarity":"Classified","collection":"The Gamma 2 Collection"},
+  {"weapon":"M4A1-S","skin_name":"Night Terror","rarity":"Restricted","collection":"The Dreams & Nightmares Collection"},
+
+  {"weapon":"M4A4","skin_name":"The Emperor","rarity":"Covert","collection":"The Prisma Collection"},
+  {"weapon":"M4A4","skin_name":"Neo-Noir","rarity":"Covert","collection":"The Clutch Collection"},
+  {"weapon":"M4A4","skin_name":"Temukau","rarity":"Covert","collection":"The Revolution Collection"},
+  {"weapon":"M4A4","skin_name":"In Living Color","rarity":"Covert","collection":"The Snakebite Collection"},
+  {"weapon":"M4A4","skin_name":"Desolate Space","rarity":"Classified","collection":"The Gamma Collection"},
+
+  {"weapon":"AWP","skin_name":"Asiimov","rarity":"Covert","collection":"The Phoenix Collection"},
+  {"weapon":"AWP","skin_name":"Hyper Beast","rarity":"Covert","collection":"The Falchion Collection"},
+  {"weapon":"AWP","skin_name":"Neo-Noir","rarity":"Covert","collection":"The Danger Zone Collection"},
+  {"weapon":"AWP","skin_name":"Chromatic Aberration","rarity":"Covert","collection":"The Recoil Collection"},
+  {"weapon":"AWP","skin_name":"Mortis","rarity":"Classified","collection":"The Clutch Collection"},
+
+  {"weapon":"USP-S","skin_name":"Kill Confirmed","rarity":"Covert","collection":"The Shadow Collection"},
+  {"weapon":"USP-S","skin_name":"The Traitor","rarity":"Covert","collection":"The Snakebite Collection"},
+  {"weapon":"USP-S","skin_name":"Printstream","rarity":"Covert","collection":"The Recoil Collection"},
+  {"weapon":"USP-S","skin_name":"Cortex","rarity":"Classified","collection":"The Clutch Collection"},
+  {"weapon":"USP-S","skin_name":"Ticket to Hell","rarity":"Restricted","collection":"The Dreams & Nightmares Collection"},
+
+  {"weapon":"Glock-18","skin_name":"Vogue","rarity":"Classified","collection":"The Fracture Collection"},
+  {"weapon":"Glock-18","skin_name":"Neo-Noir","rarity":"Covert","collection":"The Clutch Collection"},
+  {"weapon":"Glock-18","skin_name":"Bullet Queen","rarity":"Covert","collection":"The Prisma 2 Collection"},
+  {"weapon":"Glock-18","skin_name":"Water Elemental","rarity":"Classified","collection":"The Breakout Collection"},
+  {"weapon":"Glock-18","skin_name":"Snack Attack","rarity":"Classified","collection":"The Dreams & Nightmares Collection"},
+
+  {"weapon":"Desert Eagle","skin_name":"Printstream","rarity":"Covert","collection":"The Fracture Collection"},
+  {"weapon":"Desert Eagle","skin_name":"Ocean Drive","rarity":"Covert","collection":"The Operation Riptide Collection"},
+  {"weapon":"Desert Eagle","skin_name":"Code Red","rarity":"Covert","collection":"The Horizon Collection"},
+  {"weapon":"Desert Eagle","skin_name":"Conspiracy","rarity":"Classified","collection":"The Breakout Collection"},
+  {"weapon":"Desert Eagle","skin_name":"Mecha Industries","rarity":"Classified","collection":"The Danger Zone Collection"},
+
+  {"weapon":"P250","skin_name":"Asiimov","rarity":"Classified","collection":"The Chroma 3 Collection"},
+  {"weapon":"P250","skin_name":"See Ya Later","rarity":"Covert","collection":"The Spectrum 2 Collection"},
+  {"weapon":"P250","skin_name":"Wingshot","rarity":"Restricted","collection":"The Shadow Collection"},
+  {"weapon":"P250","skin_name":"Nevermore","rarity":"Restricted","collection":"The Falchion Collection"},
+  {"weapon":"P250","skin_name":"Cyber Shell","rarity":"Restricted","collection":"The Fracture Collection"},
+
+  {"weapon":"MP9","skin_name":"Starlight Protector","rarity":"Covert","collection":"The Dreams & Nightmares Collection"},
+  {"weapon":"MP9","skin_name":"Food Chain","rarity":"Covert","collection":"The Snakebite Collection"},
+  {"weapon":"MP9","skin_name":"Hydra","rarity":"Restricted","collection":"The Falchion Collection"},
+  {"weapon":"MP9","skin_name":"Mount Fuji","rarity":"Restricted","collection":"The Revolution Collection"},
+  {"weapon":"MP9","skin_name":"Rose Iron","rarity":"Restricted","collection":"The Winter Offensive Collection"},
+
+  {"weapon":"MAC-10","skin_name":"Neon Rider","rarity":"Covert","collection":"The Danger Zone Collection"},
+  {"weapon":"MAC-10","skin_name":"Disco Tech","rarity":"Classified","collection":"The Prisma 2 Collection"},
+  {"weapon":"MAC-10","skin_name":"Case Hardened","rarity":"Restricted","collection":"The Arms Deal Collection"},
+  {"weapon":"MAC-10","skin_name":"Toybox","rarity":"Classified","collection":"The Operation Broken Fang Collection"},
+  {"weapon":"MAC-10","skin_name":"Propaganda","rarity":"Classified","collection":"The Shattered Web Collection"},
+
+  {"weapon":"FAMAS","skin_name":"Commemoration","rarity":"Covert","collection":"The CS20 Collection"},
+  {"weapon":"FAMAS","skin_name":"Mecha Industries","rarity":"Classified","collection":"The Chroma 3 Collection"},
+  {"weapon":"FAMAS","skin_name":"Roll Cage","rarity":"Covert","collection":"The Gamma 2 Collection"},
+  {"weapon":"FAMAS","skin_name":"Eye of Athena","rarity":"Classified","collection":"The Operation Hydra Collection"},
+  {"weapon":"FAMAS","skin_name":"Rapid Eye Movement","rarity":"Restricted","collection":"The Dreams & Nightmares Collection"}
+]
