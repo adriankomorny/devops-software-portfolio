@@ -278,5 +278,195 @@
     "weapon": "Driver Gloves",
     "skin_name": "Snow Leopard",
     "rarity": "Extraordinary"
+  },
+  {
+    "weapon": "AK-47",
+    "skin_name": "Bloodsport",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "AK-47",
+    "skin_name": "Fire Serpent",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "AK-47",
+    "skin_name": "Vulcan",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "AK-47",
+    "skin_name": "Legion of Anubis",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "AK-47",
+    "skin_name": "Neon Revolution",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "M4A1-S",
+    "skin_name": "Chantico's Fire",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "M4A1-S",
+    "skin_name": "Golden Coil",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "M4A1-S",
+    "skin_name": "Welcome to the Jungle",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "M4A1-S",
+    "skin_name": "Hot Rod",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "M4A1-S",
+    "skin_name": "Master Piece",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "M4A4",
+    "skin_name": "Howl",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "M4A4",
+    "skin_name": "Poseidon",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "M4A4",
+    "skin_name": "Dragon King",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "M4A4",
+    "skin_name": "Royal Paladin",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "M4A4",
+    "skin_name": "Hellfire",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "AWP",
+    "skin_name": "Dragon Lore",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "AWP",
+    "skin_name": "Medusa",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "AWP",
+    "skin_name": "Lightning Strike",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "AWP",
+    "skin_name": "Containment Breach",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "AWP",
+    "skin_name": "Wildfire",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "USP-S",
+    "skin_name": "Neo-Noir",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "USP-S",
+    "skin_name": "Orion",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "USP-S",
+    "skin_name": "Serum",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "USP-S",
+    "skin_name": "Monster Mashup",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "Glock-18",
+    "skin_name": "Gamma Doppler",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "Glock-18",
+    "skin_name": "Dragon Tattoo",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "Glock-18",
+    "skin_name": "Wasteland Rebel",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "Desert Eagle",
+    "skin_name": "Blaze",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "Desert Eagle",
+    "skin_name": "Kumicho Dragon",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "Desert Eagle",
+    "skin_name": "Hypnotic",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "SSG 08",
+    "skin_name": "Blood in the Water",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "Galil AR",
+    "skin_name": "Chatterbox",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "P90",
+    "skin_name": "Death by Kitty",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "MP7",
+    "skin_name": "Nemesis",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "AUG",
+    "skin_name": "Akihabara Accept",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "FAMAS",
+    "skin_name": "Afterimage",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "SCAR-20",
+    "skin_name": "Cardiac",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "P2000",
+    "skin_name": "Fire Elemental",
+    "rarity": "Covert"
   }
 ]
