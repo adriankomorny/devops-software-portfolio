@@ -84,6 +84,14 @@ cd /home/vm2
 APP_PORT=8082 docker compose --env-file .env -f docker-compose.yml run --rm counter-orion python scripts/seed_catalog.py
 ```
 
+## Sprint 2 completion checklist
+- [x] Catalog-ready schema (`skins_catalog`, `user_skins`)
+- [x] Seed pipeline and indexed catalog (Covert + Extraordinary)
+- [x] Catalog API (`/catalog/skins`, `/catalog/skins/search`)
+- [x] Inventory API CRUD (`/skins`)
+- [x] Inventory UI (`/inventory`) + profile inventory snapshot (`/profile`)
+- [x] Ownership and validation checks verified (see `docs/sprint-2-verification.md`)
+
 ## Notes
 - Use immutable tags (e.g. `v0.1.0`, git SHA), avoid `latest`.
 - Keep `.env` out of git if it contains sensitive values.
