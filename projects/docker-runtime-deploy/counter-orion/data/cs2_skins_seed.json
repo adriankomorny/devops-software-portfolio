@@ -1,283 +1,23 @@
 [
   {
     "weapon": "AK-47",
+    "skin_name": "Aphrodite",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "AK-47",
+    "skin_name": "Aquamarine Revenge",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "AK-47",
     "skin_name": "Asiimov",
     "rarity": "Covert"
   },
   {
     "weapon": "AK-47",
-    "skin_name": "Nightwish",
+    "skin_name": "B the Monster",
     "rarity": "Covert"
-  },
-  {
-    "weapon": "M4A1-S",
-    "skin_name": "Printstream",
-    "rarity": "Covert"
-  },
-  {
-    "weapon": "M4A1-S",
-    "skin_name": "Player Two",
-    "rarity": "Covert"
-  },
-  {
-    "weapon": "M4A4",
-    "skin_name": "The Emperor",
-    "rarity": "Covert"
-  },
-  {
-    "weapon": "M4A4",
-    "skin_name": "Neo-Noir",
-    "rarity": "Covert"
-  },
-  {
-    "weapon": "M4A4",
-    "skin_name": "Temukau",
-    "rarity": "Covert"
-  },
-  {
-    "weapon": "M4A4",
-    "skin_name": "In Living Color",
-    "rarity": "Covert"
-  },
-  {
-    "weapon": "AWP",
-    "skin_name": "Asiimov",
-    "rarity": "Covert"
-  },
-  {
-    "weapon": "AWP",
-    "skin_name": "Hyper Beast",
-    "rarity": "Covert"
-  },
-  {
-    "weapon": "AWP",
-    "skin_name": "Neo-Noir",
-    "rarity": "Covert"
-  },
-  {
-    "weapon": "AWP",
-    "skin_name": "Chromatic Aberration",
-    "rarity": "Covert"
-  },
-  {
-    "weapon": "USP-S",
-    "skin_name": "Kill Confirmed",
-    "rarity": "Covert"
-  },
-  {
-    "weapon": "USP-S",
-    "skin_name": "The Traitor",
-    "rarity": "Covert"
-  },
-  {
-    "weapon": "USP-S",
-    "skin_name": "Printstream",
-    "rarity": "Covert"
-  },
-  {
-    "weapon": "Glock-18",
-    "skin_name": "Neo-Noir",
-    "rarity": "Covert"
-  },
-  {
-    "weapon": "Glock-18",
-    "skin_name": "Bullet Queen",
-    "rarity": "Covert"
-  },
-  {
-    "weapon": "Desert Eagle",
-    "skin_name": "Printstream",
-    "rarity": "Covert"
-  },
-  {
-    "weapon": "Desert Eagle",
-    "skin_name": "Ocean Drive",
-    "rarity": "Covert"
-  },
-  {
-    "weapon": "Desert Eagle",
-    "skin_name": "Code Red",
-    "rarity": "Covert"
-  },
-  {
-    "weapon": "P250",
-    "skin_name": "See Ya Later",
-    "rarity": "Covert"
-  },
-  {
-    "weapon": "MP9",
-    "skin_name": "Starlight Protector",
-    "rarity": "Covert"
-  },
-  {
-    "weapon": "MP9",
-    "skin_name": "Food Chain",
-    "rarity": "Covert"
-  },
-  {
-    "weapon": "MAC-10",
-    "skin_name": "Neon Rider",
-    "rarity": "Covert"
-  },
-  {
-    "weapon": "FAMAS",
-    "skin_name": "Commemoration",
-    "rarity": "Covert"
-  },
-  {
-    "weapon": "FAMAS",
-    "skin_name": "Roll Cage",
-    "rarity": "Covert"
-  },
-  {
-    "weapon": "Karambit",
-    "skin_name": "Doppler",
-    "rarity": "Extraordinary"
-  },
-  {
-    "weapon": "Butterfly Knife",
-    "skin_name": "Fade",
-    "rarity": "Extraordinary"
-  },
-  {
-    "weapon": "M9 Bayonet",
-    "skin_name": "Crimson Web",
-    "rarity": "Extraordinary"
-  },
-  {
-    "weapon": "Sport Gloves",
-    "skin_name": "Pandora's Box",
-    "rarity": "Extraordinary"
-  },
-  {
-    "weapon": "Driver Gloves",
-    "skin_name": "Imperial Plaid",
-    "rarity": "Extraordinary"
-  },
-  {
-    "weapon": "Karambit",
-    "skin_name": "Tiger Tooth",
-    "rarity": "Extraordinary"
-  },
-  {
-    "weapon": "Karambit",
-    "skin_name": "Marble Fade",
-    "rarity": "Extraordinary"
-  },
-  {
-    "weapon": "Karambit",
-    "skin_name": "Gamma Doppler",
-    "rarity": "Extraordinary"
-  },
-  {
-    "weapon": "Butterfly Knife",
-    "skin_name": "Doppler",
-    "rarity": "Extraordinary"
-  },
-  {
-    "weapon": "Butterfly Knife",
-    "skin_name": "Slaughter",
-    "rarity": "Extraordinary"
-  },
-  {
-    "weapon": "Butterfly Knife",
-    "skin_name": "Marble Fade",
-    "rarity": "Extraordinary"
-  },
-  {
-    "weapon": "M9 Bayonet",
-    "skin_name": "Lore",
-    "rarity": "Extraordinary"
-  },
-  {
-    "weapon": "M9 Bayonet",
-    "skin_name": "Doppler",
-    "rarity": "Extraordinary"
-  },
-  {
-    "weapon": "M9 Bayonet",
-    "skin_name": "Tiger Tooth",
-    "rarity": "Extraordinary"
-  },
-  {
-    "weapon": "Bayonet",
-    "skin_name": "Gamma Doppler",
-    "rarity": "Extraordinary"
-  },
-  {
-    "weapon": "Bayonet",
-    "skin_name": "Marble Fade",
-    "rarity": "Extraordinary"
-  },
-  {
-    "weapon": "Skeleton Knife",
-    "skin_name": "Crimson Web",
-    "rarity": "Extraordinary"
-  },
-  {
-    "weapon": "Skeleton Knife",
-    "skin_name": "Fade",
-    "rarity": "Extraordinary"
-  },
-  {
-    "weapon": "Nomad Knife",
-    "skin_name": "Crimson Web",
-    "rarity": "Extraordinary"
-  },
-  {
-    "weapon": "Stiletto Knife",
-    "skin_name": "Doppler",
-    "rarity": "Extraordinary"
-  },
-  {
-    "weapon": "Talon Knife",
-    "skin_name": "Fade",
-    "rarity": "Extraordinary"
-  },
-  {
-    "weapon": "Hand Wraps",
-    "skin_name": "Cobalt Skulls",
-    "rarity": "Extraordinary"
-  },
-  {
-    "weapon": "Hand Wraps",
-    "skin_name": "Overprint",
-    "rarity": "Extraordinary"
-  },
-  {
-    "weapon": "Moto Gloves",
-    "skin_name": "Spearmint",
-    "rarity": "Extraordinary"
-  },
-  {
-    "weapon": "Sport Gloves",
-    "skin_name": "Vice",
-    "rarity": "Extraordinary"
-  },
-  {
-    "weapon": "Sport Gloves",
-    "skin_name": "Hedge Maze",
-    "rarity": "Extraordinary"
-  },
-  {
-    "weapon": "Specialist Gloves",
-    "skin_name": "Crimson Kimono",
-    "rarity": "Extraordinary"
-  },
-  {
-    "weapon": "Specialist Gloves",
-    "skin_name": "Emerald Web",
-    "rarity": "Extraordinary"
-  },
-  {
-    "weapon": "Driver Gloves",
-    "skin_name": "King Snake",
-    "rarity": "Extraordinary"
-  },
-  {
-    "weapon": "Driver Gloves",
-    "skin_name": "Snow Leopard",
-    "rarity": "Extraordinary"
   },
   {
     "weapon": "AK-47",
@@ -291,7 +31,32 @@
   },
   {
     "weapon": "AK-47",
-    "skin_name": "Vulcan",
+    "skin_name": "Fuel Injector",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "AK-47",
+    "skin_name": "Gold Arabesque",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "AK-47",
+    "skin_name": "Head Shot",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "AK-47",
+    "skin_name": "Inheritance",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "AK-47",
+    "skin_name": "Jaguar",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "AK-47",
+    "skin_name": "Leet Museo",
     "rarity": "Covert"
   },
   {
@@ -305,68 +70,73 @@
     "rarity": "Covert"
   },
   {
-    "weapon": "M4A1-S",
-    "skin_name": "Chantico's Fire",
+    "weapon": "AK-47",
+    "skin_name": "Neon Rider",
     "rarity": "Covert"
   },
   {
-    "weapon": "M4A1-S",
-    "skin_name": "Golden Coil",
+    "weapon": "AK-47",
+    "skin_name": "Nightwish",
     "rarity": "Covert"
   },
   {
-    "weapon": "M4A1-S",
-    "skin_name": "Welcome to the Jungle",
+    "weapon": "AK-47",
+    "skin_name": "The Empress",
     "rarity": "Covert"
   },
   {
-    "weapon": "M4A1-S",
-    "skin_name": "Hot Rod",
+    "weapon": "AK-47",
+    "skin_name": "The Oligarch",
     "rarity": "Covert"
   },
   {
-    "weapon": "M4A1-S",
-    "skin_name": "Master Piece",
+    "weapon": "AK-47",
+    "skin_name": "Vulcan",
     "rarity": "Covert"
   },
   {
-    "weapon": "M4A4",
-    "skin_name": "Howl",
+    "weapon": "AK-47",
+    "skin_name": "Wasteland Rebel",
     "rarity": "Covert"
   },
   {
-    "weapon": "M4A4",
-    "skin_name": "Poseidon",
+    "weapon": "AK-47",
+    "skin_name": "Wild Lotus",
     "rarity": "Covert"
   },
   {
-    "weapon": "M4A4",
-    "skin_name": "Dragon King",
+    "weapon": "AK-47",
+    "skin_name": "X-Ray",
     "rarity": "Covert"
   },
   {
-    "weapon": "M4A4",
-    "skin_name": "Royal Paladin",
+    "weapon": "AUG",
+    "skin_name": "Akihabara Accept",
     "rarity": "Covert"
   },
   {
-    "weapon": "M4A4",
-    "skin_name": "Hellfire",
-    "rarity": "Covert"
-  },
-  {
-    "weapon": "AWP",
-    "skin_name": "Dragon Lore",
+    "weapon": "AUG",
+    "skin_name": "Chameleon",
     "rarity": "Covert"
   },
   {
     "weapon": "AWP",
-    "skin_name": "Medusa",
+    "skin_name": "Asiimov",
     "rarity": "Covert"
   },
   {
     "weapon": "AWP",
-    "skin_name": "Lightning Strike",
+    "skin_name": "CMYK",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "AWP",
+    "skin_name": "Chromatic Aberration",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "AWP",
+    "skin_name": "Chrome Cannon",
     "rarity": "Covert"
   },
   {
@@ -376,7 +146,422 @@
   },
   {
     "weapon": "AWP",
+    "skin_name": "Desert Hydra",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "AWP",
+    "skin_name": "Dragon Lore",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "AWP",
+    "skin_name": "Fade",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "AWP",
+    "skin_name": "Gungnir",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "AWP",
+    "skin_name": "Hyper Beast",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "AWP",
+    "skin_name": "Lightning Strike",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "AWP",
+    "skin_name": "LongDog",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "AWP",
+    "skin_name": "Man-o'-war",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "AWP",
+    "skin_name": "Medusa",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "AWP",
+    "skin_name": "Neo-Noir",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "AWP",
+    "skin_name": "Oni Taiji",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "AWP",
+    "skin_name": "Printstream",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "AWP",
+    "skin_name": "The Prince",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "AWP",
     "skin_name": "Wildfire",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "CZ75-Auto",
+    "skin_name": "Victoria",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "Desert Eagle",
+    "skin_name": "Blaze",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "Desert Eagle",
+    "skin_name": "Code Red",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "Desert Eagle",
+    "skin_name": "Golden Koi",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "Desert Eagle",
+    "skin_name": "Hypnotic",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "Desert Eagle",
+    "skin_name": "Kumicho Dragon",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "Desert Eagle",
+    "skin_name": "Ocean Drive",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "Desert Eagle",
+    "skin_name": "Printstream",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "FAMAS",
+    "skin_name": "Afterimage",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "FAMAS",
+    "skin_name": "Bad Trip",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "FAMAS",
+    "skin_name": "Commemoration",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "FAMAS",
+    "skin_name": "Roll Cage",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "Five-SeveN",
+    "skin_name": "Angry Mob",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "Five-SeveN",
+    "skin_name": "Hyper Beast",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "Galil AR",
+    "skin_name": "Chatterbox",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "Glock-18",
+    "skin_name": "Bullet Queen",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "Glock-18",
+    "skin_name": "Dragon Tattoo",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "Glock-18",
+    "skin_name": "Gamma Doppler",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "Glock-18",
+    "skin_name": "Gold Toof",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "Glock-18",
+    "skin_name": "Neo-Noir",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "Glock-18",
+    "skin_name": "Wasteland Rebel",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "M4A1-S",
+    "skin_name": "Chantico's Fire",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "M4A1-S",
+    "skin_name": "Cyrex",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "M4A1-S",
+    "skin_name": "Fade",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "M4A1-S",
+    "skin_name": "Golden Coil",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "M4A1-S",
+    "skin_name": "Hot Rod",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "M4A1-S",
+    "skin_name": "Hyper Beast",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "M4A1-S",
+    "skin_name": "Imminent Danger",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "M4A1-S",
+    "skin_name": "Master Piece",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "M4A1-S",
+    "skin_name": "Mecha Industries",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "M4A1-S",
+    "skin_name": "Player Two",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "M4A1-S",
+    "skin_name": "Printstream",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "M4A1-S",
+    "skin_name": "Vaporwave",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "M4A1-S",
+    "skin_name": "Welcome to the Jungle",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "M4A4",
+    "skin_name": "Asiimov",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "M4A4",
+    "skin_name": "Bullet Rain",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "M4A4",
+    "skin_name": "Buzz Kill",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "M4A4",
+    "skin_name": "Desert-Strike",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "M4A4",
+    "skin_name": "Dragon King",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "M4A4",
+    "skin_name": "Eye of Horus",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "M4A4",
+    "skin_name": "Full Throttle",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "M4A4",
+    "skin_name": "Hellfire",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "M4A4",
+    "skin_name": "Howl",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "M4A4",
+    "skin_name": "In Living Color",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "M4A4",
+    "skin_name": "Neo-Noir",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "M4A4",
+    "skin_name": "Poseidon",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "M4A4",
+    "skin_name": "Royal Paladin",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "M4A4",
+    "skin_name": "Temukau",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "M4A4",
+    "skin_name": "The Battlestar",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "M4A4",
+    "skin_name": "The Coalition",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "M4A4",
+    "skin_name": "The Emperor",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "M4A4",
+    "skin_name": "X-Ray",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "MAC-10",
+    "skin_name": "Neon Rider",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "MAC-10",
+    "skin_name": "Stalker",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "MP7",
+    "skin_name": "Bloodsport",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "MP7",
+    "skin_name": "Nemesis",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "MP9",
+    "skin_name": "Food Chain",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "MP9",
+    "skin_name": "Starlight Protector",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "P2000",
+    "skin_name": "Fire Elemental",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "P250",
+    "skin_name": "See Ya Later",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "P90",
+    "skin_name": "Asiimov",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "P90",
+    "skin_name": "Death by Kitty",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "PP-Bizon",
+    "skin_name": "Judgement of Anubis",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "R8 Revolver",
+    "skin_name": "Fade",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "SCAR-20",
+    "skin_name": "Cardiac",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "SSG 08",
+    "skin_name": "Blood in the Water",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "SSG 08",
+    "skin_name": "Dragonfire",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "Sawed-Off",
+    "skin_name": "The Kraken",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "USP-S",
+    "skin_name": "Kill Confirmed",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "USP-S",
+    "skin_name": "Monster Mashup",
     "rarity": "Covert"
   },
   {
@@ -391,82 +576,167 @@
   },
   {
     "weapon": "USP-S",
+    "skin_name": "Printstream",
+    "rarity": "Covert"
+  },
+  {
+    "weapon": "USP-S",
     "skin_name": "Serum",
     "rarity": "Covert"
   },
   {
     "weapon": "USP-S",
-    "skin_name": "Monster Mashup",
+    "skin_name": "The Traitor",
     "rarity": "Covert"
   },
   {
-    "weapon": "Glock-18",
+    "weapon": "Bayonet",
     "skin_name": "Gamma Doppler",
-    "rarity": "Covert"
+    "rarity": "Extraordinary"
   },
   {
-    "weapon": "Glock-18",
-    "skin_name": "Dragon Tattoo",
-    "rarity": "Covert"
+    "weapon": "Bayonet",
+    "skin_name": "Marble Fade",
+    "rarity": "Extraordinary"
   },
   {
-    "weapon": "Glock-18",
-    "skin_name": "Wasteland Rebel",
-    "rarity": "Covert"
+    "weapon": "Butterfly Knife",
+    "skin_name": "Doppler",
+    "rarity": "Extraordinary"
   },
   {
-    "weapon": "Desert Eagle",
-    "skin_name": "Blaze",
-    "rarity": "Covert"
+    "weapon": "Butterfly Knife",
+    "skin_name": "Fade",
+    "rarity": "Extraordinary"
   },
   {
-    "weapon": "Desert Eagle",
-    "skin_name": "Kumicho Dragon",
-    "rarity": "Covert"
+    "weapon": "Butterfly Knife",
+    "skin_name": "Marble Fade",
+    "rarity": "Extraordinary"
   },
   {
-    "weapon": "Desert Eagle",
-    "skin_name": "Hypnotic",
-    "rarity": "Covert"
+    "weapon": "Butterfly Knife",
+    "skin_name": "Slaughter",
+    "rarity": "Extraordinary"
   },
   {
-    "weapon": "SSG 08",
-    "skin_name": "Blood in the Water",
-    "rarity": "Covert"
+    "weapon": "Driver Gloves",
+    "skin_name": "Imperial Plaid",
+    "rarity": "Extraordinary"
   },
   {
-    "weapon": "Galil AR",
-    "skin_name": "Chatterbox",
-    "rarity": "Covert"
+    "weapon": "Driver Gloves",
+    "skin_name": "King Snake",
+    "rarity": "Extraordinary"
   },
   {
-    "weapon": "P90",
-    "skin_name": "Death by Kitty",
-    "rarity": "Covert"
+    "weapon": "Driver Gloves",
+    "skin_name": "Snow Leopard",
+    "rarity": "Extraordinary"
   },
   {
-    "weapon": "MP7",
-    "skin_name": "Nemesis",
-    "rarity": "Covert"
+    "weapon": "Hand Wraps",
+    "skin_name": "Cobalt Skulls",
+    "rarity": "Extraordinary"
   },
   {
-    "weapon": "AUG",
-    "skin_name": "Akihabara Accept",
-    "rarity": "Covert"
+    "weapon": "Hand Wraps",
+    "skin_name": "Overprint",
+    "rarity": "Extraordinary"
   },
   {
-    "weapon": "FAMAS",
-    "skin_name": "Afterimage",
-    "rarity": "Covert"
+    "weapon": "Karambit",
+    "skin_name": "Doppler",
+    "rarity": "Extraordinary"
   },
   {
-    "weapon": "SCAR-20",
-    "skin_name": "Cardiac",
-    "rarity": "Covert"
+    "weapon": "Karambit",
+    "skin_name": "Gamma Doppler",
+    "rarity": "Extraordinary"
   },
   {
-    "weapon": "P2000",
-    "skin_name": "Fire Elemental",
-    "rarity": "Covert"
+    "weapon": "Karambit",
+    "skin_name": "Marble Fade",
+    "rarity": "Extraordinary"
+  },
+  {
+    "weapon": "Karambit",
+    "skin_name": "Tiger Tooth",
+    "rarity": "Extraordinary"
+  },
+  {
+    "weapon": "M9 Bayonet",
+    "skin_name": "Crimson Web",
+    "rarity": "Extraordinary"
+  },
+  {
+    "weapon": "M9 Bayonet",
+    "skin_name": "Doppler",
+    "rarity": "Extraordinary"
+  },
+  {
+    "weapon": "M9 Bayonet",
+    "skin_name": "Lore",
+    "rarity": "Extraordinary"
+  },
+  {
+    "weapon": "M9 Bayonet",
+    "skin_name": "Tiger Tooth",
+    "rarity": "Extraordinary"
+  },
+  {
+    "weapon": "Moto Gloves",
+    "skin_name": "Spearmint",
+    "rarity": "Extraordinary"
+  },
+  {
+    "weapon": "Nomad Knife",
+    "skin_name": "Crimson Web",
+    "rarity": "Extraordinary"
+  },
+  {
+    "weapon": "Skeleton Knife",
+    "skin_name": "Crimson Web",
+    "rarity": "Extraordinary"
+  },
+  {
+    "weapon": "Skeleton Knife",
+    "skin_name": "Fade",
+    "rarity": "Extraordinary"
+  },
+  {
+    "weapon": "Specialist Gloves",
+    "skin_name": "Crimson Kimono",
+    "rarity": "Extraordinary"
+  },
+  {
+    "weapon": "Specialist Gloves",
+    "skin_name": "Emerald Web",
+    "rarity": "Extraordinary"
+  },
+  {
+    "weapon": "Sport Gloves",
+    "skin_name": "Hedge Maze",
+    "rarity": "Extraordinary"
+  },
+  {
+    "weapon": "Sport Gloves",
+    "skin_name": "Pandora's Box",
+    "rarity": "Extraordinary"
+  },
+  {
+    "weapon": "Sport Gloves",
+    "skin_name": "Vice",
+    "rarity": "Extraordinary"
+  },
+  {
+    "weapon": "Stiletto Knife",
+    "skin_name": "Doppler",
+    "rarity": "Extraordinary"
+  },
+  {
+    "weapon": "Talon Knife",
+    "skin_name": "Fade",
+    "rarity": "Extraordinary"
   }
 ]
