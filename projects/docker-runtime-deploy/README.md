@@ -43,6 +43,10 @@ cp .env.example .env
 - `GET /me` (Bearer access token)
 - `GET /catalog/skins` (Bearer; pagination + filters)
 - `GET /catalog/skins/search?q=...` (Bearer)
+- `GET /skins` (Bearer; my inventory)
+- `POST /skins` (Bearer; add to inventory)
+- `PUT /skins/{id}` (Bearer; update inventory entry)
+- `DELETE /skins/{id}` (Bearer; delete inventory entry)
 
 ## DB migration bootstrap (one-time for developers)
 ```bash

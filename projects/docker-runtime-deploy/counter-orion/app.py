@@ -105,6 +105,24 @@ def _catalog_to_dict(item: SkinCatalog) -> dict:
     }
 
 
+def _user_skin_to_dict(item: UserSkin) -> dict:
+    return {
+        "id": item.id,
+        "user_id": item.user_id,
+        "catalog_skin_id": item.catalog_skin_id,
+        "weapon": item.catalog_skin.weapon if item.catalog_skin else None,
+        "skin_name": item.catalog_skin.skin_name if item.catalog_skin else None,
+        "rarity": item.catalog_skin.rarity if item.catalog_skin else None,
+        "wear": item.wear,
+        "stattrak": item.stattrak,
+        "quantity": item.quantity,
+        "note": item.note,
+        "buy_price_eur": float(item.buy_price_eur) if item.buy_price_eur is not None else None,
+        "created_at": item.created_at.isoformat() if item.created_at else None,
+        "updated_at": item.updated_at.isoformat() if item.updated_at else None,
+    }
+
+
 def auth_required(fn):
     @wraps(fn)
     def wrapper(*args, **kwargs):
@@ -461,6 +479,107 @@ def catalog_skins_search():
     )
 
     return jsonify({"items": [_catalog_to_dict(i) for i in items], "limit": limit, "count": len(items)})
+
+
+@app.get("/skins")
+@auth_required
+def my_skins():
+    user = g.current_user
+    items = (
+        UserSkin.query.filter_by(user_id=user.id)
+        .order_by(UserSkin.created_at.desc())
+        .all()
+    )
+    return jsonify({"items": [_user_skin_to_dict(i) for i in items], "total": len(items)})
+
+
+@app.post("/skins")
+@auth_required
+def add_skin():
+    user = g.current_user
+    data = request.get_json(silent=True) or {}
+
+    catalog_skin_id = data.get("catalog_skin_id")
+    if not catalog_skin_id:
+        return jsonify({"error": "catalog_skin_id is required"}), 400
+
+    catalog_skin = SkinCatalog.query.get(int(catalog_skin_id))
+    if not catalog_skin:
+        return jsonify({"error": "catalog skin not found"}), 404
+
+    quantity = int(data.get("quantity", 1))
+    if quantity < 1:
+        return jsonify({"error": "quantity must be >= 1"}), 400
+
+    buy_price = data.get("buy_price_eur")
+    if buy_price is not None and str(buy_price).strip() != "":
+        buy_price = float(buy_price)
+        if buy_price < 0:
+            return jsonify({"error": "buy_price_eur must be >= 0"}), 400
+    else:
+        buy_price = None
+
+    item = UserSkin(
+        user_id=user.id,
+        catalog_skin_id=catalog_skin.id,
+        wear=(data.get("wear") or "").strip() or None,
+        stattrak=bool(data.get("stattrak", False)),
+        quantity=quantity,
+        note=(data.get("note") or "").strip() or None,
+        buy_price_eur=buy_price,
+    )
+    db.session.add(item)
+    db.session.commit()
+
+    return jsonify(_user_skin_to_dict(item)), 201
+
+
+@app.put("/skins/<int:skin_id>")
+@auth_required
+def update_skin(skin_id: int):
+    user = g.current_user
+    item = UserSkin.query.filter_by(id=skin_id, user_id=user.id).first()
+    if not item:
+        return jsonify({"error": "skin entry not found"}), 404
+
+    data = request.get_json(silent=True) or {}
+
+    if "wear" in data:
+        item.wear = (data.get("wear") or "").strip() or None
+    if "stattrak" in data:
+        item.stattrak = bool(data.get("stattrak"))
+    if "quantity" in data:
+        q = int(data.get("quantity"))
+        if q < 1:
+            return jsonify({"error": "quantity must be >= 1"}), 400
+        item.quantity = q
+    if "note" in data:
+        item.note = (data.get("note") or "").strip() or None
+    if "buy_price_eur" in data:
+        val = data.get("buy_price_eur")
+        if val is None or str(val).strip() == "":
+            item.buy_price_eur = None
+        else:
+            val = float(val)
+            if val < 0:
+                return jsonify({"error": "buy_price_eur must be >= 0"}), 400
+            item.buy_price_eur = val
+
+    db.session.commit()
+    return jsonify(_user_skin_to_dict(item))
+
+
+@app.delete("/skins/<int:skin_id>")
+@auth_required
+def delete_skin(skin_id: int):
+    user = g.current_user
+    item = UserSkin.query.filter_by(id=skin_id, user_id=user.id).first()
+    if not item:
+        return jsonify({"error": "skin entry not found"}), 404
+
+    db.session.delete(item)
+    db.session.commit()
+    return jsonify({"deleted": True, "id": skin_id})
 
 
 if __name__ == "__main__":
