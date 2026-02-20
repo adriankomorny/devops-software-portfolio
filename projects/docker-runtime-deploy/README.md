@@ -59,6 +59,11 @@ flask --app manage.py db upgrade
 6. Logout and verify redirect back to `/`
 7. (API) `GET /me` without token returns 401
 
+## Sprint 2 / Task 1 schema baseline
+- `skins_catalog` (central CS2 catalog)
+- `user_skins` (user-owned inventory entries)
+- migration revision: `07e6fa35699e`
+
 ## Notes
 - Use immutable tags (e.g. `v0.1.0`, git SHA), avoid `latest`.
 - Keep `.env` out of git if it contains sensitive values.

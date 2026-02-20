@@ -44,6 +44,37 @@ class User(db.Model):
         return check_password_hash(self.password_hash, password)
 
 
+class SkinCatalog(db.Model):
+    __tablename__ = "skins_catalog"
+
+    id = db.Column(db.Integer, primary_key=True)
+    game = db.Column(db.String(32), nullable=False, default="cs2")
+    weapon = db.Column(db.String(64), nullable=False)
+    skin_name = db.Column(db.String(128), nullable=False)
+    rarity = db.Column(db.String(32), nullable=False)
+    collection = db.Column(db.String(128), nullable=True)
+    image_url = db.Column(db.String(512), nullable=True)
+    created_at = db.Column(db.DateTime(timezone=True), server_default=func.now(), nullable=False)
+
+
+class UserSkin(db.Model):
+    __tablename__ = "user_skins"
+
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey("users.id", ondelete="CASCADE"), nullable=False, index=True)
+    catalog_skin_id = db.Column(db.Integer, db.ForeignKey("skins_catalog.id", ondelete="RESTRICT"), nullable=False, index=True)
+    wear = db.Column(db.String(32), nullable=True)
+    stattrak = db.Column(db.Boolean, nullable=False, default=False)
+    quantity = db.Column(db.Integer, nullable=False, default=1)
+    note = db.Column(db.String(500), nullable=True)
+    buy_price_eur = db.Column(db.Numeric(10, 2), nullable=True)
+    created_at = db.Column(db.DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_at = db.Column(db.DateTime(timezone=True), server_default=func.now(), onupdate=func.now(), nullable=False)
+
+    user = db.relationship("User", backref=db.backref("skins", lazy=True, cascade="all, delete-orphan"))
+    catalog_skin = db.relationship("SkinCatalog", backref=db.backref("owned_entries", lazy=True))
+
+
 def _create_token(user: User, token_type: str) -> str:
     now = datetime.now(timezone.utc)
     ttl = timedelta(minutes=JWT_ACCESS_TTL_MIN) if token_type == "access" else timedelta(days=JWT_REFRESH_TTL_DAYS)
