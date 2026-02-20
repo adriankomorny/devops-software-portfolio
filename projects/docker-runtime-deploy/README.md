@@ -30,7 +30,8 @@ cp .env.example .env
 ```
 
 ## Endpoints
-- `/` (browser UI + auth smoke panel)
+- `/` (login/register UI)
+- `/profile` (authenticated profile page)
 - `/health`
 - `/version`
 - `/api/message`

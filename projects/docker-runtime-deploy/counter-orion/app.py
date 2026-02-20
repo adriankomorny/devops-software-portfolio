@@ -105,7 +105,7 @@ def root():
     body { font-family: Arial, sans-serif; background:#0f172a; color:#e2e8f0; margin:0; }
     .wrap { max-width: 760px; margin: 8vh auto; padding: 24px; background:#1e293b; border-radius:12px; border:1px solid #334155; }
     .row { margin-top: 12px; }
-    button { margin-top: 14px; padding: 8px 14px; border:0; border-radius:8px; background:#38bdf8; color:#082f49; font-weight:700; cursor:pointer; }
+    button { margin-top: 14px; margin-right: 8px; padding: 8px 14px; border:0; border-radius:8px; background:#38bdf8; color:#082f49; font-weight:700; cursor:pointer; }
     input { margin: 4px 0; width: 100%; padding: 8px; border-radius: 8px; border: 1px solid #334155; background: #0f172a; color: #e2e8f0; }
     .grid { display:grid; grid-template-columns: 1fr 1fr; gap: 16px; }
     pre { background:#0f172a; border:1px solid #334155; border-radius:8px; padding:10px; overflow:auto; }
@@ -119,7 +119,7 @@ def root():
     <div class=\"row\">Version: <strong id=\"version\">__APP_VERSION__</strong></div>
     <div class=\"row\">Health: <strong id=\"health\">checking...</strong></div>
 
-    <h2>Auth smoke test</h2>
+    <h2>Login / Register</h2>
     <div class=\"grid\">
       <section>
         <h3>Register</h3>
@@ -136,12 +136,11 @@ def root():
       </section>
     </div>
 
+    <button id=\"profileBtn\">Go to /profile</button>
     <button id=\"meBtn\">Call /me</button>
     <pre id=\"output\">ready</pre>
   </main>
   <script>
-    let accessToken = null;
-
     const output = document.getElementById('output');
     const setOutput = (value) => output.textContent = JSON.stringify(value, null, 2);
 
@@ -184,11 +183,21 @@ def root():
         body: JSON.stringify(payload)
       });
       const data = await res.json();
-      accessToken = data.access_token || null;
+      if (data.access_token) {
+        localStorage.setItem('counter_orion_access_token', data.access_token);
+        localStorage.setItem('counter_orion_refresh_token', data.refresh_token || '');
+        window.location.href = '/profile';
+        return;
+      }
       setOutput(data);
     });
 
+    document.getElementById('profileBtn').addEventListener('click', () => {
+      window.location.href = '/profile';
+    });
+
     document.getElementById('meBtn').addEventListener('click', async () => {
+      const accessToken = localStorage.getItem('counter_orion_access_token');
       const res = await fetch('/me', {
         headers: accessToken ? { 'Authorization': `Bearer ${accessToken}` } : {}
       });
@@ -201,6 +210,76 @@ def root():
 </html>
 """
     html = html.replace("__APP_NAME__", APP_NAME).replace("__APP_VERSION__", APP_VERSION)
+    return Response(html, mimetype="text/html")
+
+
+@app.get("/profile")
+def profile_page():
+    html = """
+<!doctype html>
+<html lang=\"en\">
+<head>
+  <meta charset=\"utf-8\" />
+  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />
+  <title>__APP_NAME__ / profile</title>
+  <style>
+    body { font-family: Arial, sans-serif; background:#0f172a; color:#e2e8f0; margin:0; }
+    .wrap { max-width: 760px; margin: 8vh auto; padding: 24px; background:#1e293b; border-radius:12px; border:1px solid #334155; }
+    button { margin-top: 14px; margin-right: 8px; padding: 8px 14px; border:0; border-radius:8px; background:#38bdf8; color:#082f49; font-weight:700; cursor:pointer; }
+    pre { background:#0f172a; border:1px solid #334155; border-radius:8px; padding:10px; overflow:auto; }
+  </style>
+</head>
+<body>
+  <main class=\"wrap\">
+    <h1>Counter-Orion / Profile</h1>
+    <p>Authenticated profile page</p>
+    <pre id=\"profile\">loading...</pre>
+    <button id=\"refreshBtn\">Refresh profile</button>
+    <button id=\"logoutBtn\">Logout</button>
+    <button id=\"homeBtn\">Back to /</button>
+  </main>
+  <script>
+    const tokenKey = 'counter_orion_access_token';
+    const profileEl = document.getElementById('profile');
+
+    async function loadProfile() {
+      const accessToken = localStorage.getItem(tokenKey);
+      if (!accessToken) {
+        window.location.href = '/';
+        return;
+      }
+
+      const res = await fetch('/me', {
+        headers: { 'Authorization': `Bearer ${accessToken}` }
+      });
+
+      if (res.status === 401) {
+        localStorage.removeItem(tokenKey);
+        localStorage.removeItem('counter_orion_refresh_token');
+        window.location.href = '/';
+        return;
+      }
+
+      const data = await res.json();
+      profileEl.textContent = JSON.stringify(data, null, 2);
+    }
+
+    document.getElementById('refreshBtn').addEventListener('click', loadProfile);
+    document.getElementById('logoutBtn').addEventListener('click', () => {
+      localStorage.removeItem(tokenKey);
+      localStorage.removeItem('counter_orion_refresh_token');
+      window.location.href = '/';
+    });
+    document.getElementById('homeBtn').addEventListener('click', () => {
+      window.location.href = '/';
+    });
+
+    loadProfile();
+  </script>
+</body>
+</html>
+"""
+    html = html.replace("__APP_NAME__", APP_NAME)
     return Response(html, mimetype="text/html")
 
 
