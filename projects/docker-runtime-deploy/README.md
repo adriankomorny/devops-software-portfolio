@@ -34,6 +34,7 @@ cp .env.example .env
 ## Endpoints
 - `/` (login/register UI)
 - `/profile` (authenticated profile page)
+- `/inventory` (authenticated inventory UI)
 - `/health`
 - `/version`
 - `/api/message`

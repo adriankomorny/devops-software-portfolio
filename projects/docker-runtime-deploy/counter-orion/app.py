@@ -190,6 +190,7 @@ def root():
     </div>
 
     <button id=\"profileBtn\">Go to /profile</button>
+    <button id=\"inventoryBtn\">Go to /inventory</button>
     <button id=\"meBtn\">Call /me</button>
     <pre id=\"output\">ready</pre>
   </main>
@@ -247,6 +248,10 @@ def root():
 
     document.getElementById('profileBtn').addEventListener('click', () => {
       window.location.href = '/profile';
+    });
+
+    document.getElementById('inventoryBtn').addEventListener('click', () => {
+      window.location.href = '/inventory';
     });
 
     document.getElementById('meBtn').addEventListener('click', async () => {
@@ -328,6 +333,197 @@ def profile_page():
     });
 
     loadProfile();
+  </script>
+</body>
+</html>
+"""
+    html = html.replace("__APP_NAME__", APP_NAME)
+    return Response(html, mimetype="text/html")
+
+
+@app.get("/inventory")
+def inventory_page():
+    html = """
+<!doctype html>
+<html lang=\"en\">
+<head>
+  <meta charset=\"utf-8\" />
+  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />
+  <title>__APP_NAME__ / inventory</title>
+  <style>
+    body { font-family: Arial, sans-serif; background:#0f172a; color:#e2e8f0; margin:0; }
+    .wrap { max-width: 980px; margin: 4vh auto; padding: 24px; background:#1e293b; border-radius:12px; border:1px solid #334155; }
+    .grid { display:grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    input, select { margin: 4px 0; width: 100%; padding: 8px; border-radius: 8px; border: 1px solid #334155; background: #0f172a; color: #e2e8f0; }
+    button { margin-top: 8px; margin-right: 8px; padding: 8px 14px; border:0; border-radius:8px; background:#38bdf8; color:#082f49; font-weight:700; cursor:pointer; }
+    table { width:100%; border-collapse: collapse; margin-top: 12px; }
+    th, td { border-bottom: 1px solid #334155; padding: 8px; text-align:left; font-size: 14px; }
+    .muted { color:#94a3b8; font-size: 13px; }
+  </style>
+</head>
+<body>
+  <main class=\"wrap\">
+    <h1>Counter-Orion / Inventory</h1>
+    <div class=\"muted\">Task 5 UI: catalog search + add + inventory CRUD</div>
+
+    <div class=\"grid\">
+      <section>
+        <h3>Catalog search</h3>
+        <input id=\"q\" placeholder=\"Search (e.g. Printstream)\" />
+        <select id=\"rarity\">
+          <option value=\"\">Any rarity</option>
+          <option value=\"Covert\">Covert</option>
+          <option value=\"Extraordinary\">Extraordinary</option>
+        </select>
+        <button id=\"searchBtn\">Search catalog</button>
+        <table>
+          <thead><tr><th>ID</th><th>Weapon</th><th>Skin</th><th>Rarity</th></tr></thead>
+          <tbody id=\"catalogBody\"></tbody>
+        </table>
+      </section>
+
+      <section>
+        <h3>Add to my inventory</h3>
+        <input id=\"catalogSkinId\" placeholder=\"catalog_skin_id\" />
+        <input id=\"wear\" placeholder=\"wear (e.g. Factory New)\" />
+        <input id=\"quantity\" type=\"number\" min=\"1\" value=\"1\" placeholder=\"quantity\" />
+        <input id=\"buyPrice\" type=\"number\" step=\"0.01\" min=\"0\" placeholder=\"buy_price_eur\" />
+        <input id=\"note\" placeholder=\"note\" />
+        <label><input id=\"stattrak\" type=\"checkbox\" style=\"width:auto;\" /> StatTrak</label>
+        <br />
+        <button id=\"addBtn\">Add item</button>
+        <button id=\"reloadBtn\">Reload inventory</button>
+      </section>
+    </div>
+
+    <h3>My inventory</h3>
+    <table>
+      <thead><tr><th>ID</th><th>Weapon</th><th>Skin</th><th>Qty</th><th>Wear</th><th>StatTrak</th><th>Note</th><th>Actions</th></tr></thead>
+      <tbody id=\"invBody\"></tbody>
+    </table>
+
+    <button id=\"homeBtn\">Back to /</button>
+    <pre id=\"output\" class=\"muted\"></pre>
+  </main>
+
+  <script>
+    const tokenKey = 'counter_orion_access_token';
+    const output = document.getElementById('output');
+    const setOutput = (v) => output.textContent = JSON.stringify(v, null, 2);
+
+    function authHeaders() {
+      const t = localStorage.getItem(tokenKey);
+      if (!t) return null;
+      return { 'Authorization': `Bearer ${t}`, 'Content-Type': 'application/json' };
+    }
+
+    async function api(path, method='GET', body=null) {
+      const headers = authHeaders();
+      if (!headers) { window.location.href='/'; return null; }
+      const res = await fetch(path, { method, headers, body: body ? JSON.stringify(body) : null });
+      if (res.status === 401) { localStorage.removeItem(tokenKey); window.location.href='/'; return null; }
+      const data = await res.json();
+      return { ok: res.ok, data, status: res.status };
+    }
+
+    function renderCatalog(items) {
+      const body = document.getElementById('catalogBody');
+      body.innerHTML = '';
+      for (const i of items) {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `<td>${i.id}</td><td>${i.weapon}</td><td>${i.skin_name}</td><td>${i.rarity}</td>`;
+        tr.onclick = () => { document.getElementById('catalogSkinId').value = i.id; };
+        body.appendChild(tr);
+      }
+    }
+
+    async function loadCatalog() {
+      const q = document.getElementById('q').value.trim();
+      const rarity = document.getElementById('rarity').value;
+      const params = new URLSearchParams({ page: '1', page_size: '30' });
+      if (q) params.set('q', q);
+      if (rarity) params.set('rarity', rarity);
+      const r = await api('/catalog/skins?' + params.toString());
+      if (!r) return;
+      if (!r.ok) return setOutput(r.data);
+      renderCatalog(r.data.items || []);
+      setOutput({ catalog_total: r.data.total, shown: (r.data.items || []).length });
+    }
+
+    function renderInventory(items) {
+      const body = document.getElementById('invBody');
+      body.innerHTML = '';
+      for (const i of items) {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${i.id}</td>
+          <td>${i.weapon || ''}</td>
+          <td>${i.skin_name || ''}</td>
+          <td>${i.quantity}</td>
+          <td>${i.wear || ''}</td>
+          <td>${i.stattrak ? 'yes' : 'no'}</td>
+          <td>${i.note || ''}</td>
+          <td>
+            <button data-act=\"edit\" data-id=\"${i.id}\">Edit</button>
+            <button data-act=\"del\" data-id=\"${i.id}\">Delete</button>
+          </td>
+        `;
+        body.appendChild(tr);
+      }
+
+      body.querySelectorAll('button[data-act="del"]').forEach(btn => {
+        btn.addEventListener('click', async () => {
+          const id = btn.getAttribute('data-id');
+          const r = await api('/skins/' + id, 'DELETE');
+          if (!r) return;
+          setOutput(r.data);
+          loadInventory();
+        });
+      });
+
+      body.querySelectorAll('button[data-act="edit"]').forEach(btn => {
+        btn.addEventListener('click', async () => {
+          const id = btn.getAttribute('data-id');
+          const quantity = Number(prompt('New quantity (>=1):', '1'));
+          if (!quantity || quantity < 1) return;
+          const note = prompt('New note:', 'updated via UI');
+          const r = await api('/skins/' + id, 'PUT', { quantity, note });
+          if (!r) return;
+          setOutput(r.data);
+          loadInventory();
+        });
+      });
+    }
+
+    async function loadInventory() {
+      const r = await api('/skins');
+      if (!r) return;
+      if (!r.ok) return setOutput(r.data);
+      renderInventory(r.data.items || []);
+      setOutput({ inventory_total: r.data.total });
+    }
+
+    document.getElementById('searchBtn').addEventListener('click', loadCatalog);
+    document.getElementById('reloadBtn').addEventListener('click', loadInventory);
+    document.getElementById('homeBtn').addEventListener('click', () => window.location.href='/');
+
+    document.getElementById('addBtn').addEventListener('click', async () => {
+      const payload = {
+        catalog_skin_id: Number(document.getElementById('catalogSkinId').value),
+        wear: document.getElementById('wear').value,
+        quantity: Number(document.getElementById('quantity').value || 1),
+        buy_price_eur: document.getElementById('buyPrice').value || null,
+        note: document.getElementById('note').value,
+        stattrak: document.getElementById('stattrak').checked,
+      };
+      const r = await api('/skins', 'POST', payload);
+      if (!r) return;
+      setOutput(r.data);
+      if (r.ok) loadInventory();
+    });
+
+    loadCatalog();
+    loadInventory();
   </script>
 </body>
 </html>
