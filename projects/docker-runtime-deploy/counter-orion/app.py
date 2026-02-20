@@ -44,6 +44,11 @@ class User(db.Model):
         return check_password_hash(self.password_hash, password)
 
 
+with app.app_context():
+    # Sprint 1 scaffold fallback: ensure base tables exist even before Alembic workflow is finalized.
+    db.create_all()
+
+
 def _create_token(user: User, token_type: str) -> str:
     now = datetime.now(timezone.utc)
     ttl = timedelta(minutes=JWT_ACCESS_TTL_MIN) if token_type == "access" else timedelta(days=JWT_REFRESH_TTL_DAYS)
