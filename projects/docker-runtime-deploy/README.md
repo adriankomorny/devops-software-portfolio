@@ -34,7 +34,7 @@ cp .env.example .env
 ## Endpoints
 - `/` (login/register UI)
 - `/profile` (authenticated profile page)
-- `/inventory` (authenticated inventory UI)
+- `/inventory` (authenticated inventory UI: skin-name autocomplete, wear dropdown, CRUD)
 - `/health`
 - `/version`
 - `/api/message`

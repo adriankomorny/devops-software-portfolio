@@ -282,9 +282,11 @@ def profile_page():
   <title>__APP_NAME__ / profile</title>
   <style>
     body { font-family: Arial, sans-serif; background:#0f172a; color:#e2e8f0; margin:0; }
-    .wrap { max-width: 760px; margin: 8vh auto; padding: 24px; background:#1e293b; border-radius:12px; border:1px solid #334155; }
+    .wrap { max-width: 920px; margin: 6vh auto; padding: 24px; background:#1e293b; border-radius:12px; border:1px solid #334155; }
     button { margin-top: 14px; margin-right: 8px; padding: 8px 14px; border:0; border-radius:8px; background:#38bdf8; color:#082f49; font-weight:700; cursor:pointer; }
     pre { background:#0f172a; border:1px solid #334155; border-radius:8px; padding:10px; overflow:auto; }
+    table { width:100%; border-collapse: collapse; margin-top: 12px; }
+    th, td { border-bottom: 1px solid #334155; padding: 8px; text-align:left; font-size: 14px; }
   </style>
 </head>
 <body>
@@ -292,13 +294,22 @@ def profile_page():
     <h1>Counter-Orion / Profile</h1>
     <p>Authenticated profile page</p>
     <pre id=\"profile\">loading...</pre>
+
+    <h3>My inventory snapshot</h3>
+    <table>
+      <thead><tr><th>ID</th><th>Weapon</th><th>Skin</th><th>Rarity</th><th>Qty</th><th>Wear</th></tr></thead>
+      <tbody id=\"profileInvBody\"></tbody>
+    </table>
+
     <button id=\"refreshBtn\">Refresh profile</button>
+    <button id=\"inventoryBtn\">Go to /inventory</button>
     <button id=\"logoutBtn\">Logout</button>
     <button id=\"homeBtn\">Back to /</button>
   </main>
   <script>
     const tokenKey = 'counter_orion_access_token';
     const profileEl = document.getElementById('profile');
+    const invBody = document.getElementById('profileInvBody');
 
     async function loadProfile() {
       const accessToken = localStorage.getItem(tokenKey);
@@ -307,22 +318,34 @@ def profile_page():
         return;
       }
 
-      const res = await fetch('/me', {
-        headers: { 'Authorization': `Bearer ${accessToken}` }
-      });
+      const [meRes, invRes] = await Promise.all([
+        fetch('/me', { headers: { 'Authorization': `Bearer ${accessToken}` } }),
+        fetch('/skins', { headers: { 'Authorization': `Bearer ${accessToken}` } })
+      ]);
 
-      if (res.status === 401) {
+      if (meRes.status === 401 || invRes.status === 401) {
         localStorage.removeItem(tokenKey);
         localStorage.removeItem('counter_orion_refresh_token');
         window.location.href = '/';
         return;
       }
 
-      const data = await res.json();
-      profileEl.textContent = JSON.stringify(data, null, 2);
+      const me = await meRes.json();
+      profileEl.textContent = JSON.stringify(me, null, 2);
+
+      const inv = await invRes.json();
+      invBody.innerHTML = '';
+      for (const i of (inv.items || [])) {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `<td>${i.id}</td><td>${i.weapon || ''}</td><td>${i.skin_name || ''}</td><td>${i.rarity || ''}</td><td>${i.quantity}</td><td>${i.wear || ''}</td>`;
+        invBody.appendChild(tr);
+      }
     }
 
     document.getElementById('refreshBtn').addEventListener('click', loadProfile);
+    document.getElementById('inventoryBtn').addEventListener('click', () => {
+      window.location.href = '/inventory';
+    });
     document.getElementById('logoutBtn').addEventListener('click', () => {
       localStorage.removeItem(tokenKey);
       localStorage.removeItem('counter_orion_refresh_token');
@@ -384,8 +407,17 @@ def inventory_page():
 
       <section>
         <h3>Add to my inventory</h3>
-        <input id=\"catalogSkinId\" placeholder=\"catalog_skin_id\" />
-        <input id=\"wear\" placeholder=\"wear (e.g. Factory New)\" />
+        <input id=\"skinNameSearch\" placeholder=\"Type skin name (autocomplete)\" />
+        <div id=\"skinSuggestions\" class=\"muted\"></div>
+        <input id=\"catalogSkinId\" placeholder=\"catalog_skin_id (auto-filled)\" readonly />
+        <select id=\"wear\">
+          <option value=\"\">Wear (optional)</option>
+          <option>Factory New</option>
+          <option>Minimal Wear</option>
+          <option>Field-Tested</option>
+          <option>Well-Worn</option>
+          <option>Battle-Scarred</option>
+        </select>
         <input id=\"quantity\" type=\"number\" min=\"1\" value=\"1\" placeholder=\"quantity\" />
         <input id=\"buyPrice\" type=\"number\" step=\"0.01\" min=\"0\" placeholder=\"buy_price_eur\" />
         <input id=\"note\" placeholder=\"note\" />
@@ -432,9 +464,39 @@ def inventory_page():
       for (const i of items) {
         const tr = document.createElement('tr');
         tr.innerHTML = `<td>${i.id}</td><td>${i.weapon}</td><td>${i.skin_name}</td><td>${i.rarity}</td>`;
-        tr.onclick = () => { document.getElementById('catalogSkinId').value = i.id; };
+        tr.onclick = () => {
+          document.getElementById('catalogSkinId').value = i.id;
+          document.getElementById('skinNameSearch').value = `${i.weapon} | ${i.skin_name}`;
+          document.getElementById('skinSuggestions').innerHTML = `Selected: #${i.id} ${i.weapon} | ${i.skin_name}`;
+        };
         body.appendChild(tr);
       }
+    }
+
+    async function autocompleteSkins() {
+      const q = document.getElementById('skinNameSearch').value.trim();
+      const suggestions = document.getElementById('skinSuggestions');
+      if (q.length < 2) {
+        suggestions.textContent = 'Type at least 2 chars...';
+        return;
+      }
+      const r = await api('/catalog/skins/search?q=' + encodeURIComponent(q) + '&limit=8');
+      if (!r || !r.ok) return;
+      const items = r.data.items || [];
+      suggestions.innerHTML = '';
+      for (const i of items) {
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.textContent = `#${i.id} ${i.weapon} | ${i.skin_name} (${i.rarity})`;
+        b.style.marginTop = '4px';
+        b.onclick = () => {
+          document.getElementById('catalogSkinId').value = i.id;
+          document.getElementById('skinNameSearch').value = `${i.weapon} | ${i.skin_name}`;
+          suggestions.innerHTML = `Selected: #${i.id} ${i.weapon} | ${i.skin_name}`;
+        };
+        suggestions.appendChild(b);
+      }
+      if (!items.length) suggestions.textContent = 'No matches';
     }
 
     async function loadCatalog() {
@@ -504,6 +566,7 @@ def inventory_page():
     }
 
     document.getElementById('searchBtn').addEventListener('click', loadCatalog);
+    document.getElementById('skinNameSearch').addEventListener('input', autocompleteSkins);
     document.getElementById('reloadBtn').addEventListener('click', loadInventory);
     document.getElementById('homeBtn').addEventListener('click', () => window.location.href='/');
 
