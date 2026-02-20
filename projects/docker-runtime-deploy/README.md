@@ -12,7 +12,7 @@ Lightweight deployment workflow for constrained environments where Kubernetes is
 ## Project structure
 ```text
 docker-runtime-deploy/
-├─ sample-browser-app/
+├─ counter-orion/
 ├─ scripts/
 ├─ docs/
 ├─ docker-compose.yml

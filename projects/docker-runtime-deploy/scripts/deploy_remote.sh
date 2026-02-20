@@ -11,7 +11,7 @@ fi
 
 VM2_HOST="${VM2_HOST:?VM2_HOST is required}"
 VM2_USER="${VM2_USER:?VM2_USER is required}"
-APP_NAME="${APP_NAME:-sample-browser-app}"
+APP_NAME="${APP_NAME:-counter-orion}"
 APP_PORT="${APP_PORT:-8080}"
 POSTGRES_DB="${POSTGRES_DB:-orion}"
 POSTGRES_USER="${POSTGRES_USER:-orion}"

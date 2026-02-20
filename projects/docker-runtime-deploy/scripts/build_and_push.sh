@@ -11,7 +11,7 @@ if [[ -z "$TAG" ]]; then
 fi
 
 GITHUB_OWNER="${GITHUB_OWNER:-adriankomorny}"
-APP_NAME="${APP_NAME:-sample-browser-app}"
+APP_NAME="${APP_NAME:-counter-orion}"
 IMAGE_REPO="${IMAGE_REPO:-ghcr.io/${GITHUB_OWNER}/${APP_NAME}}"
 
 if ! command -v docker >/dev/null 2>&1; then
@@ -20,7 +20,7 @@ if ! command -v docker >/dev/null 2>&1; then
 fi
 
 echo "Building ${IMAGE_REPO}:${TAG}"
-docker build -t "${IMAGE_REPO}:${TAG}" sample-browser-app
+docker build -t "${IMAGE_REPO}:${TAG}" counter-orion
 
 echo "Pushing ${IMAGE_REPO}:${TAG}"
 docker push "${IMAGE_REPO}:${TAG}"

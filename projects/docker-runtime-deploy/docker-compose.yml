@@ -16,7 +16,7 @@ services:
       retries: 5
       start_period: 10s
 
-  sample-browser-app:
+  counter-orion:
     image: ${IMAGE_REPO}:${IMAGE_TAG}
     container_name: ${APP_NAME}
     restart: unless-stopped

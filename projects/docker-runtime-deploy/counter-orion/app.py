@@ -3,7 +3,7 @@ import os
 
 app = Flask(__name__)
 
-APP_NAME = os.getenv("APP_NAME", "sample-browser-app")
+APP_NAME = os.getenv("APP_NAME", "counter-orion")
 APP_VERSION = os.getenv("APP_VERSION", "dev")
 
 
@@ -75,7 +75,7 @@ def version():
 
 @app.get("/api/message")
 def message():
-    return jsonify({"message": "Hello from Orion sample-browser-app 🚀"})
+    return jsonify({"message": "Hello from Counter-Orion 🚀"})
 
 
 if __name__ == "__main__":
