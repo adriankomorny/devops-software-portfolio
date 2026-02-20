@@ -1,0 +1,10 @@
+services:
+  sample-api:
+    image: ${IMAGE_REPO}:${IMAGE_TAG}
+    container_name: ${APP_NAME}
+    restart: unless-stopped
+    environment:
+      APP_NAME: ${APP_NAME}
+      APP_VERSION: ${IMAGE_TAG}
+    ports:
+      - "${APP_PORT}:8080"
