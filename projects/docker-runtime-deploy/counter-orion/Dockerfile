@@ -5,6 +5,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 COPY app.py .
 COPY manage.py .
+COPY migrations ./migrations
 
 ENV APP_NAME=counter-orion
 ENV APP_VERSION=dev

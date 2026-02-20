@@ -42,7 +42,12 @@ ENV
 
 cd /home/${VM2_USER}
 docker compose pull
-docker compose up -d
+# 1) bring up database first
+APP_PORT=${APP_PORT} docker compose up -d db
+# 2) run schema migrations against live DB
+APP_PORT=${APP_PORT} docker compose run --rm counter-orion flask --app manage.py db upgrade
+# 3) start/update full stack
+APP_PORT=${APP_PORT} docker compose up -d --remove-orphans
 EOF
 
 "$ROOT_DIR/scripts/healthcheck_remote.sh" "$APP_PORT"

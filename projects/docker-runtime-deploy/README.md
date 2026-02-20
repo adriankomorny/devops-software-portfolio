@@ -29,6 +29,8 @@ cp .env.example .env
 ./scripts/healthcheck_remote.sh
 ```
 
+`deploy_remote.sh` now runs DB migrations automatically (`flask db upgrade`) before bringing up the full stack.
+
 ## Endpoints
 - `/` (login/register UI)
 - `/profile` (authenticated profile page)
@@ -40,13 +42,22 @@ cp .env.example .env
 - `POST /auth/refresh`
 - `GET /me` (Bearer access token)
 
-## DB migration bootstrap (Sprint 1 scaffold)
+## DB migration bootstrap (one-time for developers)
 ```bash
 cd counter-orion
 flask --app manage.py db init
 flask --app manage.py db migrate -m "init users"
 flask --app manage.py db upgrade
 ```
+
+## Sprint 1 verification checklist
+1. Open `http://localhost:8082`
+2. Register a new user (email + username + password)
+3. Login with email + password
+4. Confirm redirect to `http://localhost:8082/profile`
+5. On `/profile`, verify profile JSON loads
+6. Logout and verify redirect back to `/`
+7. (API) `GET /me` without token returns 401
 
 ## Notes
 - Use immutable tags (e.g. `v0.1.0`, git SHA), avoid `latest`.
