@@ -30,10 +30,22 @@ cp .env.example .env
 ```
 
 ## Endpoints
-- `/` (browser UI)
+- `/` (browser UI + auth smoke panel)
 - `/health`
 - `/version`
 - `/api/message`
+- `POST /auth/register`
+- `POST /auth/login`
+- `POST /auth/refresh`
+- `GET /me` (Bearer access token)
+
+## DB migration bootstrap (Sprint 1 scaffold)
+```bash
+cd counter-orion
+flask --app manage.py db init
+flask --app manage.py db migrate -m "init users"
+flask --app manage.py db upgrade
+```
 
 ## Notes
 - Use immutable tags (e.g. `v0.1.0`, git SHA), avoid `latest`.
