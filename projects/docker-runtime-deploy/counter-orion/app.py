@@ -398,6 +398,32 @@ def inventory_page():
           <option value=\"Covert\">Covert</option>
           <option value=\"Extraordinary\">Extraordinary</option>
         </select>
+        <select id=\"weapon\">
+          <option value=\"\">Any weapon</option>
+          <option>AK-47</option>
+          <option>AUG</option>
+          <option>AWP</option>
+          <option>CZ75-Auto</option>
+          <option>Desert Eagle</option>
+          <option>FAMAS</option>
+          <option>Five-SeveN</option>
+          <option>Galil AR</option>
+          <option>Glock-18</option>
+          <option>M4A1-S</option>
+          <option>M4A4</option>
+          <option>MAC-10</option>
+          <option>MP7</option>
+          <option>MP9</option>
+          <option>P2000</option>
+          <option>P250</option>
+          <option>P90</option>
+          <option>PP-Bizon</option>
+          <option>R8 Revolver</option>
+          <option>Sawed-Off</option>
+          <option>SCAR-20</option>
+          <option>SSG 08</option>
+          <option>USP-S</option>
+        </select>
         <button id=\"searchBtn\">Search catalog</button>
         <table>
           <thead><tr><th>ID</th><th>Weapon</th><th>Skin</th><th>Rarity</th></tr></thead>
@@ -502,9 +528,11 @@ def inventory_page():
     async function loadCatalog() {
       const q = document.getElementById('q').value.trim();
       const rarity = document.getElementById('rarity').value;
+      const weapon = document.getElementById('weapon').value;
       const params = new URLSearchParams({ page: '1', page_size: '8' });
       if (q) params.set('q', q);
       if (rarity) params.set('rarity', rarity);
+      if (weapon) params.set('weapon', weapon);
       const r = await api('/catalog/skins?' + params.toString());
       if (!r) return;
       if (!r.ok) return setOutput(r.data);
