@@ -41,6 +41,8 @@ cp .env.example .env
 - `POST /auth/login`
 - `POST /auth/refresh`
 - `GET /me` (Bearer access token)
+- `GET /catalog/skins` (Bearer; pagination + filters)
+- `GET /catalog/skins/search?q=...` (Bearer)
 
 ## DB migration bootstrap (one-time for developers)
 ```bash

@@ -96,6 +96,18 @@ def _decode_token(token: str, expected_type: str):
     return payload
 
 
+def _catalog_to_dict(item: SkinCatalog) -> dict:
+    return {
+        "id": item.id,
+        "game": item.game,
+        "weapon": item.weapon,
+        "skin_name": item.skin_name,
+        "rarity": item.rarity,
+        "collection": item.collection,
+        "image_url": item.image_url,
+    }
+
+
 def auth_required(fn):
     @wraps(fn)
     def wrapper(*args, **kwargs):
@@ -395,6 +407,63 @@ def me():
             "created_at": user.created_at.isoformat() if user.created_at else None,
         }
     )
+
+
+@app.get("/catalog/skins")
+@auth_required
+def catalog_skins():
+    page = max(1, int(request.args.get("page", 1)))
+    page_size = min(100, max(1, int(request.args.get("page_size", 20))))
+    weapon = (request.args.get("weapon") or "").strip()
+    rarity = (request.args.get("rarity") or "").strip()
+    q = (request.args.get("q") or "").strip()
+
+    query = SkinCatalog.query
+    if weapon:
+        query = query.filter(SkinCatalog.weapon == weapon)
+    if rarity:
+        query = query.filter(SkinCatalog.rarity == rarity)
+    if q:
+        pattern = f"%{q}%"
+        query = query.filter((SkinCatalog.skin_name.ilike(pattern)) | (SkinCatalog.weapon.ilike(pattern)))
+
+    total = query.count()
+    items = (
+        query.order_by(SkinCatalog.weapon.asc(), SkinCatalog.skin_name.asc())
+        .offset((page - 1) * page_size)
+        .limit(page_size)
+        .all()
+    )
+
+    return jsonify(
+        {
+            "items": [_catalog_to_dict(i) for i in items],
+            "page": page,
+            "page_size": page_size,
+            "total": total,
+            "has_next": (page * page_size) < total,
+        }
+    )
+
+
+@app.get("/catalog/skins/search")
+@auth_required
+def catalog_skins_search():
+    q = (request.args.get("q") or "").strip()
+    if len(q) < 2:
+        return jsonify({"error": "q must be at least 2 characters"}), 400
+
+    limit = min(50, max(1, int(request.args.get("limit", 20))))
+    pattern = f"%{q}%"
+
+    items = (
+        SkinCatalog.query.filter((SkinCatalog.skin_name.ilike(pattern)) | (SkinCatalog.weapon.ilike(pattern)))
+        .order_by(SkinCatalog.weapon.asc(), SkinCatalog.skin_name.asc())
+        .limit(limit)
+        .all()
+    )
+
+    return jsonify({"items": [_catalog_to_dict(i) for i in items], "limit": limit, "count": len(items)})
 
 
 if __name__ == "__main__":
