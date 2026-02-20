@@ -1,4 +1,4 @@
-# vm2-docker-deploy
+# docker-runtime-deploy
 
 Lightweight deployment workflow for constrained environments where Kubernetes is unnecessary overhead.
 
@@ -10,7 +10,7 @@ Lightweight deployment workflow for constrained environments where Kubernetes is
 
 ## Project structure
 ```text
-vm2-docker-deploy/
+docker-runtime-deploy/
 ├─ sample-app/
 ├─ scripts/
 ├─ docs/

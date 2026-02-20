@@ -13,7 +13,7 @@ A concise collection of production-oriented projects (infrastructure + software)
 | [k8s-platform-lab](./projects/k8s-platform-lab/README.md) | Platform Engineering | Kubernetes, ArgoCD, Helm, Prometheus | `Architecture`, `Runbook`, `Results` |
 | [terraform-cloud-foundation](./projects/terraform-cloud-foundation/README.md) | IaC / Cloud | Terraform, OPA/Conftest, GitHub Actions | `Modules`, `Policy checks`, `CI pipeline` |
 | [production-api-service](./projects/production-api-service/README.md) | Backend + Ops | Go/Node, Postgres, Docker, OpenTelemetry | `SLO`, `Tracing`, `Deployment strategy` |
-| [vm2-docker-deploy](./projects/vm2-docker-deploy/README.md) | Deployment Runtime | Docker, Docker Compose, GHCR, SSH | `Architecture`, `Operations`, `Scripts` |
+| [docker-runtime-deploy](./projects/docker-runtime-deploy/README.md) | Deployment Runtime | Docker, Docker Compose, GHCR, SSH | `Architecture`, `Operations`, `Scripts` |
 
 ## Repository Structure
 
@@ -27,7 +27,7 @@ A concise collection of production-oriented projects (infrastructure + software)
 │  ├─ k8s-platform-lab/
 │  ├─ terraform-cloud-foundation/
 │  ├─ production-api-service/
-│  └─ vm2-docker-deploy/
+│  └─ docker-runtime-deploy/
 └─ README.md
 ```
 
